@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load livereload_tags %}
 
 <head>
   <meta charset="UTF-8" />
@@ -11,11 +12,11 @@
   {% block others %}{% endblock others %}
 </head>
 
-<body class="bg-black text-gray-100 font-primary">
+<body class="bg-black static text-gray-100 font-primary">
   {% block content %} {% endblock content %}
 
   <script>
-    const nav = document.querySelector('nav');
+    {% comment %} const nav = document.querySelector('nav');
 
     document.addEventListener("scroll", e => {
       if (scrollY > 100) {
@@ -23,7 +24,7 @@
       } else {
         nav.classList.remove('bg-gray-900');
       }
-    });
+    }); {% endcomment %}
   </script>
 </body>
 
